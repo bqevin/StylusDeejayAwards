@@ -92,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                                 // On complete call either onLoginSuccess or onLoginFailed
                                 onLoginSuccess();
                                 // onLoginFailed();
-                                progressDialog.dismiss();
+                               // progressDialog.dismiss();
                             }
                         }, 3000);
             }

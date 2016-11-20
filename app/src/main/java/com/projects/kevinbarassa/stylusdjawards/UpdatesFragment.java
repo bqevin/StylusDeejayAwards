@@ -53,7 +53,6 @@ public class UpdatesFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         feedItems = new ArrayList<FeedItem>();
-
         listAdapter = new FeedListAdapter(getActivity(), feedItems);
         listView.setAdapter(listAdapter);
 
@@ -104,7 +103,7 @@ public class UpdatesFragment extends Fragment {
      * */
     private void parseJsonFeed(JSONObject response) {
         try {
-            JSONArray feedArray = response.getJSONArray("");
+            JSONArray feedArray = response.getJSONArray("feed");
 
             for (int i = 0; i < feedArray.length(); i++) {
                 JSONObject feedObj = (JSONObject) feedArray.get(i);
