@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Stylus DJ Awards</string>
+    <string name="hello_world">Stylus DJ Awards</string>
+    <string name="logout"> Sign Out</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="nav_item_home">Home</string>
+    <string name="nav_item_friends">Friends</string>
+    <string name="nav_item_notifications">Messages</string>
+    <string name="description">Stylus DJ Awards is a start-up that is all about awarding the disc jockey in the entertainment industry, out to ensure that the talent in the community especially for the disc-jockey is well managed not only on an award basis but also in mentoring, up keeping and putting the disc jockey talent on the road map.\n\n
+    </string>
+    <string name="placeholder_lorem_ipsum">Lorem ipsum dolor set it</string>
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_item_friends</item>
+        <item>@string/nav_item_notifications</item>
+    </string-array>
+
+    <string name="button.finish">FINISH</string>
+    <string name="button.next">NEXT</string>
+    <string name="button.skip">SKIP</string>
+
+    <string name="title_messages">Messages</string>
+    <string name="title_friends">Friends</string>
+    <string name="title_home">Home</string>
+
+</resources>
+
