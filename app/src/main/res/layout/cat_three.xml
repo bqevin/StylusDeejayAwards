@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="1.Breakthrough DJ of the year "
+        android:text="CLUB DJ OF THE YEAR (NAIROBI)  "
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView2" />
 
@@ -22,36 +22,36 @@
             android:id="@+id/radioButton1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Dj Tito – Kilifi County" />
+            android:text="Dj Wangash – Villagerz Lounge, Uthiru" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Dj Koks – Kwale County" />
+            android:text="Dj Edu – Natives Sports Bar &amp; Grill, Thika Road" />
 
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Dj Whizz – Nairobi County" />
+            android:text="Dj Fugitive – Xs Millionaires Club, Baricho" />
 
         <RadioButton
             android:id="@+id/radioButton4"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Lee The Dj – Nairobi County" />
+            android:text="Dj Tato Mayne – Bleau Lounge, Ring Road" />
         <RadioButton
             android:id="@+id/radioButton5"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Dj Blueprint254 – Kisumu County" />
+            android:text="Dj K-Rich – Tribeka Restaurant &amp; Pub, Banda Street" />
 
         <RadioButton
             android:id="@+id/radioButton6"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Dj Gucci Boy – Mombasa County" />
+            android:text="Dj Dido – Space Lounge Bar &amp; Grill, Ngong Road" />
 
     </RadioGroup>
 

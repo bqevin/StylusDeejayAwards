@@ -21,10 +21,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".KnowDevActivity"></activity>
-        <activity android:name=".StylusActivity"></activity>
-        <activity android:name=".MainActivity" android:theme="@style/AppTheme.Dark" />
-        <activity android:name=".SignupActivity" android:theme="@style/AppTheme.Dark" />
+        <activity android:name=".KnowDevActivity" />
+        <activity android:name=".StylusActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".SignupActivity"
+            android:theme="@style/AppTheme" />
+        <!-- A child of the main activity -->
+        <activity
+            android:name=".VotingActivity"
+            android:theme="@style/AppTheme.Vote"
+            android:label="@string/start_voting"
+            android:parentActivityName=".MainActivity" >
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#555"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="RADIO DJ OF THE YEAR (NAIROBI)"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textView2" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="DJ CHRIS STYLUS – MILELE FM" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="DJ JOE MFALME – CAPITAL FM" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="DJ GITTS – RADIO MAISHA" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="DJ ROBO – KUBAMBA RADIO" />
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="DJ FLASH – RADIO CITIZEN" />
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="DJ BASH – HOMEBOYZ RADIO" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:gravity="bottom"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/voteBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:text="Vote" />
+
+    </LinearLayout>
+</LinearLayout>

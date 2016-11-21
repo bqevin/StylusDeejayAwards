@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#555"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="GOSPEL DJ OF THE YEAR "
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textView2" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="DAN THA DJ" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="DJ TABZ" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="DJ GEEGEE" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="DJ MZITO" />
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="DJ C-MPLE KEN" />
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="DJ WARSHIP" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:gravity="bottom"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/voteBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:text="Vote" />
+
+    </LinearLayout>
+</LinearLayout>

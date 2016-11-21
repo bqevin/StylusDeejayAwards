@@ -27,6 +27,7 @@
     <string name="title_messages">Messages</string>
     <string name="title_friends">Friends</string>
     <string name="title_home">Home</string>
+    <string name="start_voting">Start Voting</string>
 
 </resources>
 

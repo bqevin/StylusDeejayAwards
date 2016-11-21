@@ -54,5 +54,19 @@
         <item name="colorButtonNormal">@color/ColorPrimaryDark</item>
         <item name="android:colorButtonNormal" tools:targetApi="lollipop">@color/ColorPrimaryDark</item>
     </style>
+    <style name="AppTheme.Vote" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/ColorPrimary</item>
+        <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/backg</item>
+        <item name="colorControlNormal">@color/orange</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
+        <item name="android:textColorHint">@color/orange</item>
+
+        <item name="colorButtonNormal">@color/ColorPrimaryDark</item>
+        <item name="android:colorButtonNormal" tools:targetApi="lollipop">@color/ColorPrimaryDark</item>
+    </style>
 
 </resources>

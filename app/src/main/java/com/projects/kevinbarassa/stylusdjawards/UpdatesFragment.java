@@ -125,7 +125,8 @@ public class UpdatesFragment extends Fragment {
                                     // Signal SwipeRefreshLayout to start the progress indicator
                                     swipeRefreshLayout.setRefreshing(false);
                                     //Reset view
-                                    listView = (ListView) getView().findViewById(R.id.list);
+                                    // notify data changes to list adapater
+                                    listAdapter.notifyDataSetChanged();
                                 }
                             }
                         }, new Response.ErrorListener() {
