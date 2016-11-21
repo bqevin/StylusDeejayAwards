@@ -2,13 +2,13 @@
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#7C09B2"
+    android:background="#555"
     android:padding="20dp">
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="1.Breakthrough DJ of the year – 499 ENTRIES"
+        android:text="1.Breakthrough DJ of the year "
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView2" />
 
@@ -57,16 +57,16 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:gravity="center_vertical"
+        android:gravity="bottom"
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/voteBtn"
-            android:layout_width="223dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/orange"
-            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:textSize="20sp"
             android:text="Vote" />
 

@@ -7,6 +7,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +41,7 @@ public class UpdatesFragment extends Fragment {
     private ListView listView;
     private FeedListAdapter listAdapter;
     private List<FeedItem> feedItems;
+    private SwipeRefreshLayout swipeRefreshLayout;
     private String URL_FEED = "http://agrigender.net/stylus/json.php";
 
     @Nullable
@@ -46,6 +49,7 @@ public class UpdatesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.updates_layout,null);
         listView = (ListView) rootView.findViewById(R.id.list);
+        swipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swiperefresh);
         return rootView;
     }
 
@@ -55,11 +59,11 @@ public class UpdatesFragment extends Fragment {
         feedItems = new ArrayList<FeedItem>();
         listAdapter = new FeedListAdapter(getActivity(), feedItems);
         listView.setAdapter(listAdapter);
-
         // We first check for cached request
         Cache cache = AppController.getInstance().getRequestQueue().getCache();
-        Cache.Entry entry = cache.get(URL_FEED);
+        final Cache.Entry entry = cache.get(URL_FEED);
         if (entry != null) {
+
             // fetch the data from cache
             try {
                 String data = new String(entry.data, "UTF-8");
@@ -68,9 +72,11 @@ public class UpdatesFragment extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
+
 
         } else {
             // making fresh volley request and getting json
@@ -94,14 +100,60 @@ public class UpdatesFragment extends Fragment {
 
             // Adding request to volley request queue
             AppController.getInstance().addToRequestQueue(jsonReq);
+
+
         }
+        /*
+         * Sets up a SwipeRefreshLayout.OnRefreshListener that is invoked when the user
+         * performs a swipe-to-refresh gesture.
+         */
+        swipeRefreshLayout.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        // This method performs the actual data-refresh operation.
+                        // The method calls setRefreshing(false) when it's finished.
+                        // making fresh volley request and getting json
+                        JsonObjectRequest jsonReq = new JsonObjectRequest(Request.Method.GET,
+                                URL_FEED, null, new Response.Listener<JSONObject>() {
+
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                VolleyLog.d(TAG, "Response: " + response.toString());
+                                if (response != null) {
+                                    parseJsonFeed(response);
+                                    // Signal SwipeRefreshLayout to start the progress indicator
+                                    swipeRefreshLayout.setRefreshing(false);
+                                    //Reset view
+                                    listView = (ListView) getView().findViewById(R.id.list);
+                                }
+                            }
+                        }, new Response.ErrorListener() {
+
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                VolleyLog.d(TAG, "Error: " + error.getMessage());
+                                // Signal SwipeRefreshLayout to start the progress indicator
+                                swipeRefreshLayout.setRefreshing(false);
+                            }
+                        });
+
+                        // Adding request to volley request queue
+                        AppController.getInstance().addToRequestQueue(jsonReq);
+
+
+                    }
+                }
+        );
 
     }
 
     /**
      * Parsing json reponse and passing the data to feed view list adapter
      * */
+
     private void parseJsonFeed(JSONObject response) {
+
         try {
             JSONArray feedArray = response.getJSONArray("feed");
 
@@ -134,4 +186,6 @@ public class UpdatesFragment extends Fragment {
             e.printStackTrace();
         }
     }
+
+
 }

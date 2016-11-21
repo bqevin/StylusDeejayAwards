@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 public class VoteCategoriesFragment extends Fragment {
     private RadioGroup radioGroup;
-    private Button mButton;
+    private Button voteButton;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -27,7 +27,14 @@ public class VoteCategoriesFragment extends Fragment {
         radioGroup = (RadioGroup) rootView.findViewById(R.id.radioGroup);
         radioGroup.clearCheck();
 
-        /* Attach CheckedChangeListener to radio group */
+        voteButton = (Button) rootView.findViewById(R.id.voteBtn);
+        voteButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                RadioButton rb = (RadioButton) radioGroup.findViewById(radioGroup.getCheckedRadioButtonId());
+                Toast.makeText(getActivity(), "You have voted for " + rb.getText(), Toast.LENGTH_SHORT).show();
+            }
+        });
+         /* Attach CheckedChangeListener to radio group */
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -36,13 +43,6 @@ public class VoteCategoriesFragment extends Fragment {
                     Toast.makeText(getActivity(), rb.getText(), Toast.LENGTH_SHORT).show();
                 }
 
-            }
-        });
-        mButton = (Button) rootView.findViewById(R.id.voteBtn);
-        mButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                RadioButton rb = (RadioButton) radioGroup.findViewById(radioGroup.getCheckedRadioButtonId());
-                Toast.makeText(getActivity(), "You have voted for " + rb.getText(), Toast.LENGTH_SHORT).show();
             }
         });
         return rootView;
