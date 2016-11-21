@@ -8,7 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class VotingActivity extends AppCompatActivity {
+public class VotingActivity extends AppCompatActivity{
     /**
      * The number of pages (wizard steps) to show in this demo.
      */
@@ -43,6 +43,12 @@ public class VotingActivity extends AppCompatActivity {
             mPager.setCurrentItem(mPager.getCurrentItem() - 1);
         }
     }
+
+
+
+
+
+
 
     /**
      * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in

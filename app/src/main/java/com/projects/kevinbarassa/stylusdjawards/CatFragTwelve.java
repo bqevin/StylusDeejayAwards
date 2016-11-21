@@ -52,6 +52,8 @@ public class CatFragTwelve extends Fragment{
             public void onClick(View view) {
                 RadioButton rb = (RadioButton) rGroup.findViewById(rGroup.getCheckedRadioButtonId());
                 Toast.makeText(getActivity(), "Thank you for voting "+ rb.getText(), Toast.LENGTH_SHORT).show();
+                ViewGroup parent = (ViewGroup) view.getParent();
+                parent.removeView(view);
             }
         });
     }

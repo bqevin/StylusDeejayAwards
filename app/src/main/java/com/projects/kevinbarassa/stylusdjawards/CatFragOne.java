@@ -1,5 +1,7 @@
 package com.projects.kevinbarassa.stylusdjawards;
 
+import android.app.FragmentManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -21,6 +23,8 @@ import static com.projects.kevinbarassa.stylusdjawards.R.id.voteBtn;
 public class CatFragOne extends Fragment{
     private RadioGroup rGroup;
     private  Button vBtn;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,7 +55,10 @@ public class CatFragOne extends Fragment{
             @Override
             public void onClick(View view) {
                 RadioButton rb = (RadioButton) rGroup.findViewById(rGroup.getCheckedRadioButtonId());
-                Toast.makeText(getActivity(), "Thank you for voting "+ rb.getText(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Thank you for voting "+ rb.getText().toString(), Toast.LENGTH_SHORT).show();
+                ViewGroup parent = (ViewGroup) view.getParent();
+                parent.removeView(view);
+
             }
         });
     }
