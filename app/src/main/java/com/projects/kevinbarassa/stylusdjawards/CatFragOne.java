@@ -56,9 +56,7 @@ public class CatFragOne extends Fragment{
             public void onClick(View view) {
                 RadioButton rb = (RadioButton) rGroup.findViewById(rGroup.getCheckedRadioButtonId());
                 Toast.makeText(getActivity(), "Thank you for voting "+ rb.getText().toString(), Toast.LENGTH_SHORT).show();
-                ViewGroup parent = (ViewGroup) view.getParent();
-                parent.removeView(view);
-
+                getView().findViewById(R.id.voteBtn).setVisibility(View.GONE);
             }
         });
     }
